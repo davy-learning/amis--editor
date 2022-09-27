@@ -330,7 +330,7 @@ ghPages.match('{*.jsx,*.tsx,*.ts,*.js}', {
     }
 });
 ghPages.match('*', {
-    domain: '/amis-editor-demo',
+    domain: '/amis--editor',
     deploy: [
         fis.plugin('skip-packed'),
         fis.plugin('local-deliver', {

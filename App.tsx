@@ -6,6 +6,12 @@ import {MainStore} from './store/index';
 import RootRoute from './route/index';
 import copy from 'copy-to-clipboard';
 
+// axios.defaults.withCredentials = false;
+// axios.defaults.headers['cccc'] = 'aaaaaaaa';
+
+// axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
+
+
 export default function (): JSX.Element {
   const store = ((window as any).store = MainStore.create(
     {},
@@ -13,7 +19,7 @@ export default function (): JSX.Element {
       fetcher: ({url, method, data, config, headers}: any) => {
         config = config || {};
         config.headers = config.headers || headers || {};
-        config.withCredentials = true;
+        config.withCredentials = false;
 
         if (method !== 'post' && method !== 'put' && method !== 'patch') {
           if (data) {

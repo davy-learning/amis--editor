@@ -183,7 +183,6 @@ export function schema2component(
       let body: React.ReactNode;
 
       finalSchema.type || (finalSchema.type = 'page');
-
       body = render(
         finalSchema,
         {
